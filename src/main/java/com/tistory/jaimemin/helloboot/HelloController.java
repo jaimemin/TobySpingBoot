@@ -2,6 +2,7 @@ package com.tistory.jaimemin.helloboot;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +22,10 @@ public class HelloController {
     @GetMapping
     @ResponseBody
     public String hello(String name) {
-        return helloService.sayHello(Objects.requireNonNull(name));
+        if (name == null || name.trim().length() == 0) {
+            throw new IllegalArgumentException();
+        }
+
+        return helloService.sayHello(name);
     }
 }
