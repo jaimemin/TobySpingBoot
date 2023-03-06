@@ -1,0 +1,2 @@
+com.tistory.jaimemin.config.autoconfig.TomcatWebServerConfig
+com.tistory.jaimemin.config.autoconfig.DispatcherServletConfig
