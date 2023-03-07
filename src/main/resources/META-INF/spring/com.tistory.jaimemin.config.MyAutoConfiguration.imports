@@ -1,3 +1,5 @@
 com.tistory.jaimemin.config.autoconfig.TomcatWebServerConfig
 com.tistory.jaimemin.config.autoconfig.DispatcherServletConfig
 com.tistory.jaimemin.config.autoconfig.JettyWebServerConfig
+com.tistory.jaimemin.config.autoconfig.PropertyPlaceholderConfig
+com.tistory.jaimemin.config.autoconfig.ServerPropertiesConfig

@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HelloApiTest {
 
-    private static final String URL = "http://localhost:8080/hello?name={name}";
+    private static final String URL = "http://localhost:9090/app/hello?name={name}";
     
     @Test
     void helloApi() {
