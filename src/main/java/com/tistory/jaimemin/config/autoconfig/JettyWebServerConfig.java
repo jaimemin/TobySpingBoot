@@ -3,18 +3,18 @@ package com.tistory.jaimemin.config.autoconfig;
 import com.tistory.jaimemin.config.ConditionalOnMyClass;
 import com.tistory.jaimemin.config.MyAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
 
 @MyAutoConfiguration
-@ConditionalOnMyClass("org.apache.catalina.startup.Tomcat")
-public class TomcatWebServerConfig {
+@ConditionalOnMyClass("org.eclipse.jetty.server.Server")
+public class JettyWebServerConfig {
 
     @ConditionalOnMissingBean
-    @Bean("tomcatWebServerFactory")
+    @Bean("jettyWebServerFactory")
     public ServletWebServerFactory servletWebServerFactory() {
-        return new TomcatServletWebServerFactory();
+        return new JettyServletWebServerFactory();
     }
 
 }

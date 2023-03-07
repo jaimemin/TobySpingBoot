@@ -23,6 +23,15 @@ public class ConfigurationTest {
     }
 
     @Test
+    void differentClass() {
+        MyConfig myConfig = new MyConfig();
+        Bean1 bean1 = myConfig.bean1();
+        Bean2 bean2 = myConfig.bean2();
+
+        assertThat(bean1.common).isNotEqualTo(bean2.common);
+    }
+
+    @Test
     void proxyCommonMethod() {
         MyConfigProxy myConfigProxy = new MyConfigProxy();
         Bean1 bean1 = myConfigProxy.bean1();
