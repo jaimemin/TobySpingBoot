@@ -27,4 +27,5 @@ public class HelloControllerTest {
             String result = helloController.hello("");
         }).isInstanceOf(IllegalArgumentException.class);
     }
+
 }
