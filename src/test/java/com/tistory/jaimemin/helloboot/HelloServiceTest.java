@@ -1,19 +1,8 @@
 package com.tistory.jaimemin.helloboot;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import static org.assertj.core.api.Assertions.*;
-
-//@Test
-//@Retention(RetentionPolicy.RUNTIME)
-//@Target({ElementType.METHOD, ElementType.TYPE})
-//@interface UnitTest {}
 
 public class HelloServiceTest {
 

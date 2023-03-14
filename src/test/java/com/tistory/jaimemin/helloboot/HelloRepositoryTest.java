@@ -1,14 +1,16 @@
 package com.tistory.jaimemin.helloboot;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.annotation.Order;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@HellobootTest
+@Transactional
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class HelloRepositoryTest {
 
     @Autowired
@@ -18,11 +20,13 @@ public class HelloRepositoryTest {
     HelloRepository helloRepository;
 
     @Test
+    @Order(1)
     void findHelloFailed() {
         assertThat(helloRepository.findHello("Toby")).isNull();
     }
 
     @Test
+    @Order(2)
     void increaseCount() {
         assertThat(helloRepository.countOf("Toby")).isEqualTo(0);
 
